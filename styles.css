@@ -1,37 +1,84 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #252B42;
-    color: #fff;
+font-family: 'Arial', sans-serif;
+background-color: #1E0034;
+color: #fff;
 }
 
 header {
-    background-color: #252B42;
-    padding: 20px 0;
-    justify-content: space-between;
+background-color: #1E0034;
+padding: 20px 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
+}
+/* Logo */
+.logo {
+font-size: 20px;
+font-weight: bold;
 }
 
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* Agrupamento logo + nav */
+.left-group {
+display: flex;
+align-items: center;
+gap: 20px; /* Aqui controla a distância entre logo e menu */
 }
 
-.nav a {
-    color: #fff;
-    text-decoration: none;
+.nav-center ul {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+  
+
+.nav-center a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+}
+
+.nav-center a:hover {
+color: #00ffff;
+}
+
+/* Direita */
+.nav-right {
+display: flex;
+gap: 20px;
+align-items: center;
+}
+
+.nav-right a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+}
+
+.cta-btn {
+background-color: #1EA7FD;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+font-weight: bold;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+background-color: #0e8bd1;
 }
 
 .hero {
@@ -78,8 +125,8 @@ button {
 }
 
 footer {
-    background-color: #0d0d0d;
-    padding: 20px;
+    background-color: #1E0034;
+    padding: 80px;
     text-align: center;
 }
 
