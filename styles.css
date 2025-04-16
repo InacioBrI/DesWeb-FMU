@@ -85,7 +85,7 @@ background-color: #0e8bd1;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 20px;
+    padding: 50px 150px;
 }
 
 .text {
@@ -109,19 +109,29 @@ button {
 }
 
 #simulate-btn {
-    background-color: #007bff;
+    background-color: #D06833;
+    color: white;
+}
+
+.about-button{
+    width: 100%;
+    background-color: #D06833;
     color: white;
 }
 
 .secondary-btn {
     background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
+    color: white;
+    border: 2px solid #D06833;
     margin-left: 10px;
 }
 
 .illustration img {
-    max-width: 300px;
+    max-width: 500px;
+}
+
+.illustration2 img {
+    max-width: 500px;
 }
 
 footer {
@@ -129,6 +139,12 @@ footer {
     padding: 80px;
     text-align: center;
 }
+.icones a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 
 .footer-container {
     display: flex;

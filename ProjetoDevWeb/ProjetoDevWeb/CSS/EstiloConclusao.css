@@ -1,0 +1,61 @@
+body{
+    color: aliceblue;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.centro{
+    display: flex;
+    align-self: center;
+    
+}
+#title{
+    text-align: center;
+    margin: auto 0px;
+    align-items: center;
+    font-size: 42px;
+    color: #D06833;
+
+}
+
+.btn_comecar{
+    color: aliceblue;
+    text-decoration: none;
+    border: 1px solid #D06833;
+    padding: 8px;
+    background-color: #D06833;
+    border-radius: 10px;
+    font-size: 24px;
+    margin: 15px auto auto auto;
+    border-radius: 20px;
+}
+
+hr{
+    width: 10%;
+    color: #D06833;
+    margin-bottom: 50px;
+}
+.principal{
+    align-self: center;
+    margin-top: 160px;
+}
+.btn_comecar:hover{
+    color: aliceblue;
+    font-weight: 900;
+    text-decoration: none;
+    border: 1px solid #D06833;
+    padding: 16px;
+    background-color: #D06833;
+    border-radius: 20px;
+}
+.frase{
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+p{
+    margin: 0px;
+}
