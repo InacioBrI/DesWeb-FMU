@@ -9,8 +9,24 @@ body{
 .centro{
     display: flex;
     align-self: center;
-    
 }
+
+.bt-don{
+    max-width: 100%;
+    display: flex;
+    align-self: center;
+}
+
+.bt-don a{  
+    display: flex;
+    align-self: center;
+}
+
+.bt-home{
+    display: flex;
+    align-self: center;
+}
+
 #title{
     text-align: center;
     margin: auto 0px;
@@ -26,10 +42,19 @@ body{
     border: 1px solid #D06833;
     padding: 8px;
     background-color: #D06833;
-    border-radius: 10px;
     font-size: 24px;
     margin: 15px auto auto auto;
-    border-radius: 20px;
+    border-radius: 5px;
+}
+
+.btn-home{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 8px;
+    background-color: #633bbc;
+    font-size: 24px;
+    margin: 15px auto auto auto;
+    border-radius: 5px;
 }
 
 hr{
@@ -41,15 +66,7 @@ hr{
     align-self: center;
     margin-top: 160px;
 }
-.btn_comecar:hover{
-    color: aliceblue;
-    font-weight: 900;
-    text-decoration: none;
-    border: 1px solid #D06833;
-    padding: 16px;
-    background-color: #D06833;
-    border-radius: 20px;
-}
+
 .frase{
     margin: auto;
     width: 60%;

@@ -1,19 +1,21 @@
-const botoes = document.querySelectorAll('.botao-selecao');
-    let tipoSelecionado = null;
+document.addEventListener("DOMContentLoaded", () => {
+  const opcoes = document.querySelectorAll(".option");
+  let tipoSelecionado = null;
 
-    botoes.forEach(botao => {
-      botao.addEventListener('click', () => {
-        botoes.forEach(b => b.classList.remove('selecionado'));
-        botao.classList.add('selecionado');
-        tipoSelecionado = botao.getAttribute('data-tipo');
-      });
+  opcoes.forEach((opcao) => {
+    opcao.addEventListener("click", () => {
+      opcoes.forEach((o) => o.classList.remove("selected"));
+      opcao.classList.add("selected");
+      tipoSelecionado = opcao.getAttribute("data-tipo");
     });
+  });
 
-    function continuar() {
-      if (tipoSelecionado) {
-        alert("Você selecionou: " + tipoSelecionado.toUpperCase());
-        // Aqui você pode redirecionar ou salvar a escolha
-      } else {
-        alert("Por favor, selecione um tipo de contrato.");
-      }
+  window.continuar = function () {
+    if (tipoSelecionado) {
+      localStorage.setItem("tipoContrato", tipoSelecionado);
+      window.location.href = "/ProjetoDevWeb/Rendas.html";
+    } else {
+      alert("Por favor, selecione um tipo de contrato.");
     }
+  };
+});

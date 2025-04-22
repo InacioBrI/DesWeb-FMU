@@ -24,9 +24,10 @@ gap: 10px;
     align-items: center;
     padding: 0 120px;
 }
+
 /* Logo */
 .logo {
-font-size: 20px;
+font-size: 35px;
 font-weight: bold;
 }
 
@@ -88,16 +89,42 @@ background-color: #0e8bd1;
     padding: 50px 150px;
 }
 
+.hero2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 50px 150px;
+}
+
 .text {
     max-width: 500px;
 }
 
+.about-text {
+    max-width: 500px;
+}
+
 .text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.about-text h1 {
+    color: black;
     font-size: 36px;
     margin-bottom: 20px;
 }
 
 .text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 20px;
+    width: 90%;
+    color: #000;
     margin-bottom: 20px;
 }
 

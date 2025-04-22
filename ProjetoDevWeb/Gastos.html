@@ -1,61 +1,30 @@
+<!-- Gastos.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gastos</title>
-    <link rel="stylesheet" href="\ProjetoDevWeb\CSS\EstiloGastos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gastos</title>
+  <link rel="stylesheet" href="/ProjetoDevWeb/CSS/EstiloGastos.css" />
 </head>
 <body>
-    <div class="centro">
-        <div>
-            <h1>GASTOS</h1>
-        </div>
-
-        <div>
-            <p class="frase">
-                Insira os valores gastos nas categorias 
-                que você mais se encaixa. 
-            </p>
-            
-        </div>
-        <hr>
-        <div class="option">
-            <label for="Moradia" class="inputs">    Moradia, aluguel, Condominio,Água,Luz <br></label>
-            <input type="text" id="Moradia" class="caixa" value="R$ "><br>
-
-            <label for="Alimento">    Alimentação, Mercado, Padaria, Ifood: <br></label>
-            <input type="text" id="Alimento" class="caixa" value="R$ "><br>
-
-            <label for="Transporte">    Transporte, Onibus, Uber, Prestação do Carro, Gasolina <br></label>
-            <input type="text" id="Transporte" class="caixa" value="R$ "><br>
-
-            <label for="Saude">    Saúde, Convenio, Exame <br></label>
-            <input type="text" id="Saude" class="caixa" value="R$ "><br>
-
-            <label for="Assinaturas">    Assinaturas, Streaming <br></label>
-            <input type="text" id="Assinaturas" class="caixa" value="R$ "><br>
-
-            <label for="Lazer">    Lazer, academia, Roupas, Jogos <br></label>
-            <input type="text" id="Lazer" class="caixa" value="R$ "><br>
-
-            <label for="Educacao">    Desenvolvimento Pessoal, Educaçao, Faculdade, Curso <br></label>
-            <input type="text" id="Educacao" class="caixa" value="R$ "><br>
-
-            <label for="Investimento">    Investimento, Poupanca, Caixinha Nu, Criptomoeda <br></label>
-            <input type="text" id="Investimento" class="caixa" value="R$ "><br>
-
-            <label for="Outros">    Outros,Pets, Família , Etc  <br></label>
-            <input type="text" id="Outros" class="caixa" value="R$ ">
-
-        </div>
-
-        <div>
-                <button onclick="continuar()">CONTINUAR</button>
-        </div>
-
-
+  <div class="centro">
+    <h1>GASTOS</h1>
+    <p class="frase">Insira os valores gastos nas categorias que você mais se encaixa.</p>
+    <hr>
+    <div class="option">
+      <label>Moradia: <input type="number" id="Moradia" class="caixa"></label><br>
+      <label>Alimento: <input type="number" id="Alimento" class="caixa"></label><br>
+      <label>Transporte: <input type="number" id="Transporte" class="caixa"></label><br>
+      <label>Saúde: <input type="number" id="Saude" class="caixa"></label><br>
+      <label>Assinaturas: <input type="number" id="Assinaturas" class="caixa"></label><br>
+      <label>Lazer: <input type="number" id="Lazer" class="caixa"></label><br>
+      <label>Educação: <input type="number" id="Educacao" class="caixa"></label><br>
+      <label>Investimento: <input type="number" id="Investimento" class="caixa"></label><br>
+      <label>Outros: <input type="number" id="Outros" class="caixa"></label>
     </div>
-   
+    <button onclick="salvarGastos()">CONTINUAR</button>
+  </div>
+  <script src="/ProjetoDevWeb/JS/Gastos.js"></script>
 </body>
 </html>

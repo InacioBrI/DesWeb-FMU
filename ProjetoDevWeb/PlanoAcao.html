@@ -1,38 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plano de Ação</title>
-        <link rel="stylesheet" href="\ProjetoDevWeb\CSS\EstiloPlanoAcao.css">
-    </head>
-    <body>
-        <div class="centro">
-           
-            <div>
-                <h1>PLANO DE AÇÃO</h1>
-            </div>
-            
-            <div>
-                <p class="frase">
-                    Aqui nós mostramos de acordo com o salário e rendas extras (caso haja), como
-                    você poderia fazer o uso do seu dinheiro, dividindo em três categorias principais:
-                </p>
-            </div>
-
-            <div>
-                <table class="tabela">
-                    <th>Essenciais</th>
-                    <th>Lazer</th>
-                    <th>Investimento</th>
-                    <tr>
-                        <td>60%</td>
-                        <td>30%</td>
-                        <td>10%</td>
-                    </tr>
-                </table>
-            </div>
-
-        </div>
-    </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de Ação</title>
+  <link rel="stylesheet" href="/ProjetoDevWeb/CSS/EstiloPlanoAcao.css" />
+</head>
+<body>
+  <div class="centro">
+    <h1>PLANO DE AÇÃO</h1>
+    <p>Veja como estão distribuídos seus gastos com base na sua renda:</p>
+    <div class="resultados">
+      <p>Essenciais: <span id="valor-essenciais">0%</span></p>
+      <p>Lazer: <span id="valor-lazer">0%</span></p>
+      <p>Investimento: <span id="valor-investimento">0%</span></p>
+    </div>
+    <button onclick="irParaAnalise()">VER ANÁLISE</button>
+  </div>
+  
+</body>
+<script src="/ProjetoDevWeb/JS/PlanoAcao.js"></script>
 </html>
