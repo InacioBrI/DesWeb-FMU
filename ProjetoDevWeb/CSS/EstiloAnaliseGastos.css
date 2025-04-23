@@ -19,6 +19,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 500px;
   text-align: center;
+  align-items: center;
 }
 
 h1 {
@@ -53,13 +54,14 @@ h1 {
 
 .botao {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 10px 25px;
   background-color: #633BBC;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 20px;
+  align-items: center;
   transition: background-color 0.3s ease;
 }
 
