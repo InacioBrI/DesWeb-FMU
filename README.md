@@ -1,6 +1,6 @@
 # Simulador Financeiro
 
-**Simulador Financeiro** é um website desenvolvido em HTML, CSS e JavaScript com Banco de Dados MySQL, que permite aos usuários realizar simulações de investimentos de forma simples, visual e interativa. Os dados podem ser armazenados em um banco de dados para fins de histórico e análise futura.
+**Simulador Financeiro** é um website desenvolvido em ``HTML``, ``CSS`` e ``JavaScript`` com Banco de Dados ``MySQL``, que permite aos usuários realizar simulações de investimentos de forma simples, visual e interativa. Os dados podem ser armazenados em um banco de dados para fins de histórico e análise futura.
 
 - Versão atual do Documento: 1.0 
 ---
@@ -8,15 +8,19 @@
 
 ## Tecnologias Utilizadas
 
-### Front-end
+### ``Front-end``
 - **HTML5**: Estruturação da página
 - **CSS3**: Estilização e responsividade
 - **JavaScript**: Lógica de simulação e interatividade
-### Banco de Dados
+
+### ``Banco de Dados``
 - **MySQL**: Banco de Dados
-### Back-end
+
+### ``Back-end``
 - **PHP**: Back-end
 - **Laravel**: FrameWork
+
+ ``Mas como foi dito, o back-end será utilzado no final do primeiro semestre de 2025.`` 
 
 ---
 
@@ -34,10 +38,10 @@
 ## Funcionalidades Principais
 
  Simulação de finanças
-- Entrada de dados:<br>
+- ``Entrada de dados``:<br>
   - Valor inicial;
   - Aporte mensal;
-- Resultados:
+- ``Resultados``:
   - Valor final estimado;
   - Resumo da rentabilidade.
 
@@ -83,10 +87,10 @@
 
 ## Equipe de Desenvolvimento 
 
- Christian Arruda Silva da Hora, <br>RA:2356889 - Desenvolvedor Front-End, Testador.<br>
-  Inacio Barboza<br> RA:2587078 - Desenvolvedor Front-End, Testador. <br>
-  Jessica Souza do Nascimento, <br> RA:2393505 - Analista de Requisitos, Testador.<br> 
- Júlia Martins de Toledo, <br>RA:2407220 - Designer de Website, Testador. <br>
+ ``Christian Arruda Silva da Hora``, <br>RA:2356889 - Desenvolvedor Front-End, Testador.<br>
+  ``Inacio Barboza de Lima``<br> RA:2587078 - Desenvolvedor Front-End, Testador. <br>
+  ``Jessica Souza do Nascimento``, <br> RA:2393505 - Analista de Requisitos, Testador.<br> 
+ ``Júlia Martins de Toledo``, <br>RA:2407220 - Designer de Website, Testador. <br>
 
 ## Prazo de entrega
 

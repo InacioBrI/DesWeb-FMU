@@ -76,8 +76,22 @@
     width: 500px;
   }
   
-  /* Página de cadastro centralizada */
   body.cadastro {
     justify-content: center;
+  }
+  
+  .button-link {
+    display: inline-block;
+    background-color: #6937d9;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+  }
+  .button-link:hover {
+    background-color: #5428b9;
   }
   
