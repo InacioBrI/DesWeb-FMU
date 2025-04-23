@@ -1,68 +1,65 @@
-body {
-  background-image: url(/ProjetoDevWeb/Resources/Fundo04.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
-h1 {
-  color: #ff914d;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-weight: 900;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  background-image: url('/ProjetoDevWeb/Resources/Fundo04.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #1E0034;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .centro {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  text-align: center;
 }
 
-.frase {
-  font-size: 18px;
-  margin-bottom: 50px;
-  line-height: 1.5;
-}
-
-.categorias {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.categoria {
-  flex: 1 1 200px;
-  margin: 20px;
-}
-
-.categoria h2 {
+h1 {
   font-size: 28px;
-  color: #ffffff;
+  color: #633BBC;
   margin-bottom: 10px;
 }
 
-.categoria p {
-  font-size: 22px;
-  color: #ff914d;
+p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.resultados p {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.resultados span {
   font-weight: bold;
+  color: #D06833;
 }
 
 button {
-  background-color: #ff914d;
+  margin-top: 25px;
+  padding: 10px 25px;
+  background-color: #633BBC;
   color: white;
   border: none;
-  padding: 10px 30px;
-  font-size: 16px;
   border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #e6742b;
+  background-color: #5129a4;
 }

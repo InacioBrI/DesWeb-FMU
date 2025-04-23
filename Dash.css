@@ -25,6 +25,7 @@
   
   .profile-icon {
     background-color: white;
+    cursor: pointer;
     color: #1c0033;
     border-radius: 50%;
     padding: 0.6rem;
@@ -93,6 +94,10 @@
     transition: background-color 0.3s;
   }
   
+  a{
+    width: 100%;
+  }
+
   .simulacao-btn:hover {
     background-color: #008000;
   }

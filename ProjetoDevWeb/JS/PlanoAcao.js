@@ -1,45 +1,32 @@
-window.onload = function () {
+window.onload = () => {
   const gastos = JSON.parse(localStorage.getItem("gastos")) || {};
-  const salario = parseFloat(localStorage.getItem("salario")) || 0;
-  const outras = parseFloat(localStorage.getItem("outras")) || 0;
+  const renda = parseFloat(localStorage.getItem("salario") || 0) + parseFloat(localStorage.getItem("outras") || 0);
 
-  const rendaTotal = salario + outras;
+  const categorias = {
+    essenciais: ["Moradia", "Alimento", "Transporte", "Saude", "Assinaturas", "Educacao", "Outros"],
+    lazer: ["Lazer"],
+    investimento: ["Investimento"]
+  };
 
-  const categoriasEssenciais = ["Moradia", "Alimento", "Transporte", "Saude", "Assinaturas", "Educacao", "Outros"];
-  const categoriaLazer = "Lazer";
-  const categoriaInvestimento = "Investimento";
+  const totais = { essenciais: 0, lazer: 0, investimento: 0 };
 
-  let totalEssenciais = 0;
-  let totalLazer = 0;
-  let totalInvestimento = 0;
-
-  for (let categoria in gastos) {
-    const valor = parseFloat(gastos[categoria]) || 0;
-
-    if (categoriasEssenciais.includes(categoria)) {
-      totalEssenciais += valor;
-    } else if (categoria === categoriaLazer) {
-      totalLazer += valor;
-    } else if (categoria === categoriaInvestimento) {
-      totalInvestimento += valor;
-    }
+  for (const [categoria, valor] of Object.entries(gastos)) {
+    const val = parseFloat(valor) || 0;
+    if (categorias.essenciais.includes(categoria)) totais.essenciais += val;
+    else if (categorias.lazer.includes(categoria)) totais.lazer += val;
+    else if (categorias.investimento.includes(categoria)) totais.investimento += val;
   }
 
-  function calcularPercentual(valor) {
-    return rendaTotal > 0 ? ((valor / rendaTotal) * 100).toFixed(2) : "0.00";
-  }
+  const calc = v => renda > 0 ? ((v / renda) * 100).toFixed(2) + "%" : "0.00%";
 
-  const pEssenciais = calcularPercentual(totalEssenciais);
-  const pLazer = calcularPercentual(totalLazer);
-  const pInvestimento = calcularPercentual(totalInvestimento);
+  document.getElementById("valor-essenciais").textContent = calc(totais.essenciais);
+  document.getElementById("valor-lazer").textContent = calc(totais.lazer);
+  document.getElementById("valor-investimento").textContent = calc(totais.investimento);
 
-  document.getElementById("valor-essenciais").textContent = pEssenciais + "%";
-  document.getElementById("valor-lazer").textContent = pLazer + "%";
-  document.getElementById("valor-investimento").textContent = pInvestimento + "%";
-
-  localStorage.setItem("essenciais", pEssenciais);
-  localStorage.setItem("lazer", pLazer);
-  localStorage.setItem("investimento", pInvestimento);
+  // Guarda os dados para outras páginas, se necessário
+  localStorage.setItem("essenciais", calc(totais.essenciais));
+  localStorage.setItem("lazer", calc(totais.lazer));
+  localStorage.setItem("investimento", calc(totais.investimento));
 };
 
 function irParaAnalise() {
