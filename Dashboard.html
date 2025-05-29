@@ -3,8 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FMU</title>
-  <link rel="stylesheet" href="Dash.css" />
+  <title>FMU - CRUD</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #1c0033;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .profile-icon {
+      background-color: white;
+      cursor: pointer;
+      color: #1c0033;
+      border-radius: 50%;
+      padding: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .simulacao-btn a {
+      display: block;
+      background-color: #00a000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 10px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .simulacao-btn a:hover {
+      background-color: #008000;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .filter-btn {
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #eee;
+      color: #444;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f5f5f5;
+      border-radius: 1rem;
+      overflow: hidden;
+      color: #333;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    thead {
+      background-color: #eaeaea;
+    }
+
+    .options {
+      cursor: pointer;
+      font-size: 1.5rem;
+      position: relative;
+    }
+
+    .crud-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: white;
+      color: #1c0033;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .crud-menu button {
+      display: block;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .crud-menu button:hover {
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,10 +141,10 @@
     <div class="profile-icon">👤</div>
   </header>
 
-    <div class="simulacao-btn" >
-      <a class="simulacao-btn" href="/ProjetoDevWeb/simulador.html">Faça uma simulação agora!</a>
-    </div>
-  
+  <div class="simulacao-btn">
+    <a href="/ProjetoDevWeb/simulador.html">Faça uma simulação agora!</a>
+  </div>
+
   <div class="search-bar">
     <button class="filter-btn">Filtro ⌄</button>
     <input type="text" placeholder="Procure a analise que você fez" />
@@ -32,14 +161,21 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="table-body">
       <tr>
         <td>15/01/25</td>
         <td>9:30hs</td>
         <td>Contrato</td>
         <td>R$ 1.500</td>
         <td>R$ 200 de investimento</td>
-        <td><span class="options">⋮</span></td>
+        <td>
+          <div class="options">⋮
+            <div class="crud-menu">
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deletar</button>
+            </div>
+          </div>
+        </td>
       </tr>
       <tr>
         <td>15/01/25</td>
@@ -47,9 +183,64 @@
         <td>CLT</td>
         <td>R$ 5.000</td>
         <td>R$ 500 de investimento</td>
-        <td><span class="options">⋮</span></td>
+        <td>
+          <div class="options">⋮
+            <div class="crud-menu">
+              <button class="edit-btn">Editar</button>
+              <button class="delete-btn">Deletar</button>
+            </div>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
+
+  <script>
+    // Mostrar e ocultar o menu CRUD
+    document.querySelectorAll('.options').forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.querySelectorAll('.crud-menu').forEach(menu => {
+          if(menu !== option.querySelector('.crud-menu')) {
+            menu.style.display = 'none';
+          }
+        });
+        const menu = option.querySelector('.crud-menu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Esconde os menus ao clicar fora
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.crud-menu').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    });
+
+    // Função deletar
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const row = btn.closest('tr');
+        row.remove();
+      });
+    });
+
+    // Função editar
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const row = btn.closest('tr');
+        const cells = row.querySelectorAll('td');
+        for(let i = 0; i < cells.length - 1; i++) { // Não edita o menu
+          const current = cells[i].innerText;
+          const input = prompt(`Editar valor:`, current);
+          if(input !== null && input.trim() !== '') {
+            cells[i].innerText = input;
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
